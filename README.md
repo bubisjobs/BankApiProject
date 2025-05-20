@@ -2,8 +2,7 @@
 
 A simple in-memory banking system built with Java and Spring Boot. This RESTful API supports basic banking operations such as account creation, money transfers, and transaction history retrieval.
 
----
-<pre lang="markdown"> ## 📁 Project Structure ``` com.example.bankingapi │ ├── controller │ └── AccountController.java │ ├── service │ ├── AccountService.java │ └── TransactionService.java │ ├── repository │ ├── InMemoryAccountRepository.java │ └── InMemoryTransactionRepository.java │ ├── dto │ ├── AccountDTO.java │ ├── TransferRequestDTO.java │ └── TransactionDTO.java │ ├── model │ ├── Account.java │ └── Transaction.java │ ├── exception │ ├── GlobalExceptionHandler.java │ ├── AccountNotFoundException.java │ └── InsufficientFundsException.java │ └── BankingApiApplication.java ``` </pre>
+
 
 ## 📌 Features
 
