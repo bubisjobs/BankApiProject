@@ -56,10 +56,6 @@ A simple in-memory banking system built with Java and Spring Boot. This RESTful 
 - Maven
 
 ### Build and Run
-
-# Link to the Project
-https://github.com/bubisjobs/BankApiProject/tree/master
-
 ```bash
 # Clone the repository
 git clone https://github.com/bubisjobs/banking-transactions-api.git
