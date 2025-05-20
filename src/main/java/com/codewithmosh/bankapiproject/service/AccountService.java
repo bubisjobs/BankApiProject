@@ -48,6 +48,9 @@ public class AccountService {
         if (from == null || to == null) {
             throw new AccountNotFoundException("One or both accounts not found.");
         }
+        if (from.getId().equals(to.getId())) {
+            throw new AccountNotFoundException("You cannot transfer money between the same account.");
+        }
 
         if (from.getBalance() < request.getAmount()) {
             throw new InsufficientFundsException("Insufficient funds in the source account.");
