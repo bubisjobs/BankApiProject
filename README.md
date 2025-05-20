@@ -3,6 +3,7 @@
 A simple in-memory banking system built with Java and Spring Boot. This RESTful API supports basic banking operations such as account creation, money transfers, and transaction history retrieval.
 
 ---
+## 📁 Project Structure
 
 
 com.example.bankingapi
