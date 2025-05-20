@@ -35,6 +35,7 @@ public class AccountController {
 
     @GetMapping("/{accountId}/transactions")
     public ResponseEntity<List<TransactionsDTO>> getTransactions(@PathVariable String accountId) {
+
         return ResponseEntity.ok(transactionService.getTransactionsForAccount(accountId));
     }
 }
