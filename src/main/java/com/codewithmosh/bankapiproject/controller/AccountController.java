@@ -1,15 +1,15 @@
 package com.codewithmosh.bankapiproject.controller;
 
 import com.codewithmosh.bankapiproject.dto.AccountDTO;
+import com.codewithmosh.bankapiproject.dto.TransactionsDTO;
 import com.codewithmosh.bankapiproject.dto.TransferRequestDTO;
 import com.codewithmosh.bankapiproject.service.AccountService;
 import com.codewithmosh.bankapiproject.service.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/accounts")
@@ -34,7 +34,7 @@ public class AccountController {
     }
 
     @GetMapping("/{accountId}/transactions")
-    public ResponseEntity<List<TransactionDTO>> getTransactions(@PathVariable String accountId) {
+    public ResponseEntity<List<TransactionsDTO>> getTransactions(@PathVariable String accountId) {
         return ResponseEntity.ok(transactionService.getTransactionsForAccount(accountId));
     }
 }
