@@ -22,11 +22,15 @@ public class AccountController {
         this.transactionService = transactionService;
     }
 
-    @PostMapping
+    @PostMapping("/createAccount")
     public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO accountDTO) {
         return ResponseEntity.ok(accountService.createAccount(accountDTO));
     }
 
+    @GetMapping("/getAllAccounts")
+    public ResponseEntity<List<AccountDTO>> getAllAccounts() {
+        return ResponseEntity.ok(accountService.getAllAccounts());
+    }
     @PostMapping("/transfer")
     public ResponseEntity<String> transfer(@Valid @RequestBody TransferRequestDTO request) {
         accountService.transfer(request);

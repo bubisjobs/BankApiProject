@@ -11,6 +11,9 @@ import com.codewithmosh.bankapiproject.repository.InMemoryTransactionRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AccountService {
@@ -26,6 +29,16 @@ public class AccountService {
         Account account = new Account(dto.getId(), dto.getBalance());
         accountRepository.save(account);
         return dto;
+    }
+    public List<AccountDTO> getAllAccounts(){
+
+            List<AccountDTO> accounts =  accountRepository.findAll().stream()
+                    .map(account -> new AccountDTO(account.getId(), account.getBalance()))
+                    .collect(Collectors.toList());
+        if (accounts.isEmpty()) {
+            throw new AccountNotFoundException("No accounts have been created yet.");
+        }
+        return accounts;
     }
 
     public void transfer(TransferRequestDTO request) {
