@@ -2,6 +2,8 @@ package com.codewithmosh.bankapiproject.service;
 
 import com.codewithmosh.bankapiproject.dto.AccountDTO;
 import com.codewithmosh.bankapiproject.dto.TransferRequestDTO;
+import com.codewithmosh.bankapiproject.exception.AccountNotFoundException;
+import com.codewithmosh.bankapiproject.exception.InsufficientFundsException;
 import com.codewithmosh.bankapiproject.model.Account;
 import com.codewithmosh.bankapiproject.model.Transaction;
 import com.codewithmosh.bankapiproject.repository.InMemoryAccountRepository;
@@ -31,11 +33,11 @@ public class AccountService {
         Account to = accountRepository.findById(request.getToAccountId());
 
         if (from == null || to == null) {
-//            throw new Exception("One or both accounts not found.");
+            throw new AccountNotFoundException("One or both accounts not found.");
         }
 
         if (from.getBalance() < request.getAmount()) {
-//            throw new InsufficientFundsException("Insufficient funds in the source account.");
+            throw new InsufficientFundsException("Insufficient funds in the source account.");
         }
 
         from.setBalance(from.getBalance() - request.getAmount());
