@@ -11,31 +11,21 @@ A simple in-memory banking system built with Java and Spring Boot. This RESTful 
 - Retrieve transaction history for a given account.
 - View a list of all existing accounts.
 
-- ## End Points
-  -      POST request to : http://localhost:8080/accounts/createAccount
-{
-    "id": "90",
-    "balance": "5000"
-}
-POST request to : http://localhost:8080/accounts/transfer
-    {
-    "fromAccountId": "90",
-    "toAccountId": "12",
-    "amount": "120"
-    }
-
 ## 📬 API Endpoints
+- POST /accounts/createAccount  
+  Create a new account  
+  Body: { "id": "90", "balance": 5000 }
 
-### 🏦 Create Account
-**POST** `/accounts`  
-Creates a new account with an initial balance.
+- GET /accounts/getAllAccounts  
+  Retrieve all accounts
 
-**Request Body:**
-```json
-{
-  "id": "90",
-  "balance": 5000
-}
+- POST /accounts/transfer  
+  Transfer funds between accounts  
+  Body: { "fromAccountId": "90", "toAccountId": "12", "amount": 120 }
+
+- GET /accounts/{accountId}/transactions  
+  Retrieve transaction history for a specific account
+
 
 
 
