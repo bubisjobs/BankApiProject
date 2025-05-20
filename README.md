@@ -17,8 +17,8 @@ A simple in-memory banking system built with Java and Spring Boot. This RESTful 
     "id": "90",
     "balance": "5000"
 }
-   POST request to : http://localhost:8080/accounts/transfer
-- {
+-   POST request to : http://localhost:8080/accounts/transfer
+    {
     "fromAccountId": "90",
     "toAccountId": "12",
     "amount": "120"
