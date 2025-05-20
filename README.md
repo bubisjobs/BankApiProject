@@ -7,6 +7,12 @@ A simple in-memory banking system built with Java and Spring Boot. This RESTful 
 ## 📌 Features
 
 - Create a new bank account with an initial balance.
+- POST request to : http://localhost:8080/accounts/createAccount
+{
+    "id": "90",
+    "balance": "5000"
+}
+  
 - Transfer funds between accounts.
 - Retrieve transaction history for a given account.
 - View a list of all existing accounts.
